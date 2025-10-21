@@ -1,0 +1,66 @@
+name: Build H2 Safety Trainer
+
+on:
+  push:
+    branches: [ main ]   # change to your default branch if not 'main'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }} (Py ${{ matrix.py }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ windows-latest, ubuntu-latest ]
+        py: [ "3.10" ]
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.py }}
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller reportlab "qrcode[pil]" pillow
+
+      # (Optional) Make sure optional assets exist to avoid add-data errors
+      - name: Ensure optional assets exist
+        shell: bash
+        run: |
+          touch logo_left.png logo_right.png bg_watermark.png
+          test -f questions.json || echo "[]" > questions.json
+
+      # Windows build (use ; separator)
+      - name: Build (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: >
+          pyinstaller --onefile --noconsole
+          --add-data "questions.json;."
+          --add-data "logo_left.png;."
+          --add-data "logo_right.png;."
+          --add-data "bg_watermark.png;."
+          app.py
+
+      # Linux build (use : separator)
+      - name: Build (Linux)
+        if: runner.os == 'Linux'
+        shell: bash
+        run: >
+          pyinstaller --onefile --noconsole
+          --add-data "questions.json:."
+          --add-data "logo_left.png:."
+          --add-data "logo_right.png:."
+          --add-data "bg_watermark.png:."
+          app.py
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ runner.os }}-build
+          path: dist/**
