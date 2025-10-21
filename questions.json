@@ -1,0 +1,92 @@
+[
+  {
+    "id": "Q1",
+    "category": "Basics",
+    "difficulty": "Easy",
+    "question": "Hydrogen is lighter than air and tends to:",
+    "choices": ["Accumulate near the floor", "Accumulate near the ceiling", "Stay uniformly mixed", "Sink in water"],
+    "correct_index": 1,
+    "rationale": "H₂ has very low density and will typically rise and collect near high points or the ceiling."
+  },
+  {
+    "id": "Q2",
+    "category": "Detection",
+    "difficulty": "Easy",
+    "question": "Where is the best location for fixed hydrogen gas detectors in an indoor space?",
+    "choices": ["At floor level near drains", "Mid-wall height near doors", "Near the ceiling and potential leak points", "Inside a desk drawer"],
+    "correct_index": 2,
+    "rationale": "Mount detectors near ceilings and leak sources because H₂ rises."
+  },
+  {
+    "id": "Q3",
+    "category": "Ventilation",
+    "difficulty": "Medium",
+    "question": "The primary purpose of ventilation in hydrogen enclosures is to:",
+    "choices": ["Increase temperature", "Prevent accumulation by removing gas at high points", "Reduce oxygen concentration to 10%", "Add pleasant odor"],
+    "correct_index": 1,
+    "rationale": "Ventilation helps keep concentrations below flammable limits by exhausting gas."
+  },
+  {
+    "id": "Q4",
+    "category": "High Pressure",
+    "difficulty": "Medium",
+    "question": "Pressure relief devices (PRDs) on storage cylinders are used to:",
+    "choices": ["Increase cylinder pressure", "Release pressure safely if overpressure occurs", "Change hydrogen color", "Prevent static electricity"],
+    "correct_index": 1,
+    "rationale": "PRDs protect against overpressure by venting gas in a controlled direction."
+  },
+  {
+    "id": "Q5",
+    "category": "Ignition Sources",
+    "difficulty": "Medium",
+    "question": "Which is a good practice around hydrogen areas?",
+    "choices": ["Use unsealed relays near leaks", "Allow smoking if detectors are installed", "Use explosion-proof equipment where required", "Disable grounding"],
+    "correct_index": 2,
+    "rationale": "EX-rated devices reduce ignition risk; also enforce no-smoking and proper grounding."
+  },
+  {
+    "id": "Q6",
+    "category": "Operations",
+    "difficulty": "Hard",
+    "question": "After maintenance on a hydrogen line, what should you do before returning to service?",
+    "choices": ["Immediately pressurize to max", "Perform a leak test and verify tightness", "Skip checks if fittings are new", "Wipe with water and start"],
+    "correct_index": 1,
+    "rationale": "Always perform a leak test and confirm proper torque/seal before operation."
+  },
+  {
+    "id": "Q7",
+    "category": "Emergency",
+    "difficulty": "Medium",
+    "question": "In case of suspected hydrogen leak, the first action should be to:",
+    "choices": ["Use a lighter to locate leak", "Activate emergency stop and isolate source if safe", "Close all doors and windows", "Increase compressor speed"],
+    "correct_index": 1,
+    "rationale": "E-stop and safe isolation reduce gas release; do not ignite or trap gas."
+  },
+  {
+    "id": "Q8",
+    "category": "Labeling",
+    "difficulty": "Easy",
+    "question": "Good practice for labeling hydrogen systems includes:",
+    "choices": ["No labels to avoid attention", "Clear labels for gas lines, storage, and emergency controls", "Only label cylinders", "Use pencil on metal"],
+    "correct_index": 1,
+    "rationale": "Clear labeling improves safety and emergency response."
+  },
+  {
+    "id": "Q9",
+    "category": "Static",
+    "difficulty": "Medium",
+    "question": "To minimize ignition risk from static electricity you should:",
+    "choices": ["Isolate and avoid grounding", "Bond and ground equipment as required", "Use plastic for all parts", "Spray perfume"],
+    "correct_index": 1,
+    "rationale": "Bonding and grounding control static discharge."
+  },
+  {
+    "id": "Q10",
+    "category": "Training",
+    "difficulty": "Easy",
+    "question": "Operators should be trained to:",
+    "choices": ["Use E-stop, locate isolation valves, and evacuate safely", "Ignore alarms during day", "Override detectors", "Disable ventilation to save energy"],
+    "correct_index": 0,
+    "rationale": "Training must include emergency stopping, isolation, and evacuation procedures."
+  }
+]
